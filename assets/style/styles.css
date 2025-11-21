@@ -22,10 +22,6 @@ body {
   color: light-dark(black, #fff);
 }
 
-.logo {
-  font-size: 14px; 
-  margin-right: 10px;
-}
 
 /* No seu style.css */
 #versiculo-container {
@@ -68,9 +64,10 @@ nav {
 }
 
 nav .logo {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: white;
+  margin-right: 10px;
 }
 
 /* Botão do menu */
