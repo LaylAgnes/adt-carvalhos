@@ -1,0 +1,467 @@
+/* ===== Reset & Variáveis ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --dark: #2c3e50;
+  --bg: #ffffff;
+  --text: #333;
+  --bg-color: #fff;
+  --text-color: #333;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: light-dark(white, #000000); /* Branco no tema claro, cinza escuro no escuro */
+  color: light-dark(black, #fff);
+}
+
+.logo {
+  font-size: 14px; 
+}
+
+/* No seu style.css */
+#versiculo-container {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1fr;
+    font-family: sans-serif;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  #versiculo-container{
+    box-shadow: 0 3px 10px rgba(216, 216, 216, 0.15);
+  }
+}
+
+#texto-versiculo {
+    font-size: 1.1em;
+    font-style: italic;
+    text-align: center;
+    justify-content:space-between;
+}
+
+#referencia-versiculo {
+    font-weight: bold;
+    text-align: center;
+    justify-content:space-between;
+}
+
+
+/* ===== Navegação ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black);
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Botão do menu */
+nav .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 20px;
+  top: 15px;                 
+  transform: none;           
+  z-index: 2000;
+}
+
+
+
+.menu-toggle .icon-close {
+  display: none;
+}
+
+/* Quando abrir o menu → mostra X */
+.menu-toggle.open .icon-menu {
+  display: none;
+}
+
+.menu-toggle.open .icon-close {
+  display: inline;
+}
+
+/* Menu desktop */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Menu Cards ===== */
+.menu-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 50px auto;
+  justify-content: center;
+}
+
+/* ===== Cards ===== */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+  overflow: hidden;
+  text-align: center;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: light-dark(white, #000000);
+  color: light-dark(black, #fff);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card{
+    box-shadow: 0 3px 10px rgba(216, 216, 216, 0.15);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px;
+  background-color: light-dark(white, #000000);
+  color: light-dark(black, #fff);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px auto;
+}
+
+@media (prefers-color-scheme: dark) {
+    .card img {
+      filter: invert(100%) grayscale(100%);
+    }
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: light-dark(black, #fff);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: light-dark(black, #fff);
+}
+
+
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  height: 560px;
+  background: url('/assets/img/banner.jpg') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: .5rem;
+}
+
+.hero h3 {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ===== Seções ===== */
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+section p,
+section ul,
+section li {
+  font-size: 1.2rem
+}
+
+section a {
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== Ações Sociais ===== */
+#acoes-sociais .acoes-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#acoes-sociais .acoes-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#acoes-sociais .acoes-text p {
+  line-height: 1.6;
+}
+
+#acoes-sociais .acoes-whatsapp {
+  margin: 20px 0;
+}
+
+#acoes-sociais .qr-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+#acoes-sociais .acoes-bancarias {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#acoes-sociais .acoes-bancarias h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#acoes-sociais .acoes-bancarias p{
+  margin: 4px 0;
+}
+
+#acoes-sociais a {
+  color: light-dark(black, #fff);
+}
+
+/* ===== Redes Sociais ===== */
+#redes-sociais {
+  text-align: center;
+}
+
+#redes-sociais .redes {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#redes-sociais li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+#redes-sociais a {
+  color: light-dark(black, #fff);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+#redes-sociais a:hover {
+  text-decoration: underline;
+}
+
+
+#scrollToTopBtn {
+    display: none; /* Inicia escondido */
+    position: fixed; /* Fixa o botão na tela, sem mexer na estrutura */
+    bottom: 20px; /* 20 pixels acima da borda inferior */
+    right: 20px; /* 20 pixels da borda direita */
+    z-index: 99; /* Garante que fique acima de outros elementos */
+    border: none;
+    outline: none;
+    background-color: light-dark(white, #000000);
+  color: light-dark(black, #fff);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Faz o botão ser redondo */
+    font-size: 24px;
+    height: 55px; /* Define altura e largura para o círculo */
+    width: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#scrollToTopBtn:hover {
+    background-color: light-dark(rgb(0, 0, 0), #ffffff);
+  color: light-dark(rgb(255, 255, 255), #000000);
+}
+
+
+/* ===== Rodapé ===== */
+footer.rodape {
+  background-color: var(--black);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .rodape-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer .rodape-grid div {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer p a {
+  color: white;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}
+
+/* Footer fixo só no index */
+#index-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+/* ================= MOBILE RESPONSIVO================= */
+
+@media (max-width: 768px) {
+
+  .logo {
+   font-size: 12px; 
+ }
+
+  nav .menu-toggle {
+    display: block;
+    margin-left: auto; 
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--black);
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    padding: 8px 0;
+    display: block;
+  }
+
+  /* Cards em 1 coluna */
+  .menu-cards {
+    grid-template-columns: 1fr;
+    margin: 20px 10px;
+  }
+
+  .card {
+    height: auto;
+    min-height: 180px;
+  }
+
+  /* Hero menor */
+  .hero {
+    height: 400px;
+  }
+}
