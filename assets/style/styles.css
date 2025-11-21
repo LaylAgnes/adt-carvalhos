@@ -404,8 +404,8 @@ footer p a:hover {
 
 /* Footer fixo só no index */
 #index-footer {
-  position:relative;
-  bottom: 1px;
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 100%;
   background-color: var(--black);
