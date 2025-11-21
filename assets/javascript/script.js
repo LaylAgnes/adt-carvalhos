@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================
     const VERSAO_BIBLIA = 'ACF (Local)'; // mantém o dado original se precisar
     const DISPLAY_VERSION = 'ACF'; // o texto que será mostrado na referência
-    const JSON_FILE_PATH = 'bible_data.json';
+    const JSON_FILE_PATH = '/assets/javascript/bible_data.json'; // caminho do arquivo JSON
+
 
     // Achata o JSON da Bíblia
     function flattenBibleData(bibleData) {
